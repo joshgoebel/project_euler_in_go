@@ -5,16 +5,15 @@
 
 package main
 
-import "fmt";
+import "fmt"
 
-func main()
-{
-  sum := 0;
-  for a, b := 1, 2; b<4000000;{
-    if b%2 == 0 {
-      sum += b
-    }
-    a,b = b, b+a
-  }
-  fmt.Printf("%d\n", sum)
+func main() {
+	sum := 0;
+	for a, b := 1, 2; b < 4000000; {
+		if b%2 == 0 {
+			sum += b
+		}
+		a, b = b, b+a;
+	}
+	fmt.Printf("%d\n", sum);
 }

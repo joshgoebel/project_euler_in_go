@@ -10,12 +10,11 @@ import (
 )
 
 
-func main()
-{
-	sum := int64(0) ;
+func main() {
+	sum := int64(0);
 	for _, v := range primes.Primes_up_to(2000000) {
-		sum += v;
+		sum += v
 	}
-	
+
 	fmt.Printf("%d\n", sum);
 }

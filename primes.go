@@ -80,17 +80,16 @@ func Primes_up_to(number int64) (results []int64) {
 	return;
 }
 
-func Divisor_count(number int64) (count int64)
-{
+func Divisor_count(number int64) (count int64) {
 	max := number;
-	for i:=int64(1); i<max; i++ {
-		if number%i==0 {
-			max=number/i;
+	for i := int64(1); i < max; i++ {
+		if number%i == 0 {
+			max = number / i;
 			count++;
-			if (number/i)!=i {
+			if (number / i) != i {
 				count++
 			}
 		}
 	}
-	return
+	return;
 }
