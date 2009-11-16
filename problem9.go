@@ -10,23 +10,24 @@ import (
 	"math";
 )
 
-func main()
+func solve() (a, b, c int)
 {
-	var a, b, c int;
-	var solved bool;
 	for a = 1; a<1000; a++ {
 		for b = a+1; b<1000; b++ {
 			for c = b+1; c<1000; c++ {
 				if a+b+c==1000 && ((math.Pow(float64(a),2)+math.Pow(float64(b),2)) == math.Pow(float64(c),2))
 				{
-					solved=true;
-					break;
+					return;
 				}
 			}
-			if solved { break }
 		}
-		if solved { break }
-	}
+	}	
+	return;
+}
+
+func main()
+{
+	a, b, c := solve();
 	
 	fmt.Printf("total: %d\n", a+b+c);
 	fmt.Printf("a: %d\n", a);
