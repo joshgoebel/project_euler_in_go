@@ -34,9 +34,8 @@ func prime(number int64) bool
   }
   l=int64(len(primes));
   if number>primes[l-1] && l<1000 {
-    l2 := int(l);
-    primes = primes[0:l2+1];
-    primes[l2]=number
+    primes = primes[0:l+1];
+    primes[l]=number
   }
   return true;
 }
@@ -52,7 +51,7 @@ func main()
     }
   }
   fmt.Printf("%d\n", num);
-  for in, v := range primes {
-    fmt.Printf("prime [%d]: %d\n", in, v);
-  }
+//  for in, v := range primes {
+//    fmt.Printf("prime [%d]: %d\n", in, v);
+//  }
 }
