@@ -27,7 +27,9 @@ func prime(number int64) bool
       return false;
     }
   }
-  for i = primes[i-1]+1; i< number; i++ {
+  i = primes[i-1]+1;
+  if i%2==1 { i-- }
+  for ; i< number; i+=2 {
     if number%i==0 {
       return false;
     }
