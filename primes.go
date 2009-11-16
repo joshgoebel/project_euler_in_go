@@ -4,6 +4,7 @@ import (
 	"once";
 	"math";
 	"fmt";
+	"container/vector";
 	)
 
 var prime_storage [10000]int64;
@@ -41,7 +42,7 @@ func Prime(number int64) bool
   return true;
 }
 
-func Primes_up_to(number int64) []int64
+func Primes_up_to(number int64) (results []int64)
 {
 	space := make([]bool,number);
 	p := int64(2);
@@ -62,19 +63,18 @@ func Primes_up_to(number int64) []int64
 			}
 		}	
 	}
-	count := int64(0);
+	tresults := vector.New(0);
 	for i:=int64(2); i<number; i++ {
 		if space[i]==false {
-			count++;
+			tresults.Push(i);
 		}
 	}
-	results := make([]int64, count);
-	j := 0;
-	for i:=int64(2); i<number; i++ {
-		if space[i]==false {
-			results[j]=i;
-			j++;
-		}
+	results = make([]int64, tresults.Len());
+	i := 0;
+	for v := range tresults.Iter() {
+		results[i] = v.(int64);
+		i++
 	}
-	return results;
+	
+	return;
 }
